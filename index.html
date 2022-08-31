@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="card">
+      <div class="search">
+        <input type="text" class="search-bar" />
+        <button>Search</button>
+      </div>
+
+      <div class="weather">
+        <h2 class="city">Weather in St. Louis</h2>
+        <div class="temp">84 °F</div>
+        <img src="" alt="" class="icon" />
+        <div class="description">Sunny</div>
+        <div class="feelslike">Feels like 90 °F</div>
+        <div class="humidity">Humidity: 34%</div>
+        <div class="wind">Wind: 6.2 mph</div>
+      </div>
+    </div>
+    <!-- <script type="application/lua">
+      function roundToNearestInteger(num)
+        return math.floor(num + 0.5)
+      end
+      roundToNearestInteger(temp)
+    </script> -->
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script
+      src="http://paulcuth.me.uk/starlight/browser-lib/starlight.js"
+      data-run-script-tags
+    ></script>
+  </body>
+</html>

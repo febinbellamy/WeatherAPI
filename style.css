@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #222;
+  background-image: url("https://images.pexels.com/photos/125457/pexels-photo-125457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+}
+
+.description {
+  text-transform: capitalize;
+}
+
+.card {
+  background: rgba(6, 4, 45, 0.85);
+  color: white;
+  padding: 2em;
+  border-radius: 40px;
+  width: 100%;
+  max-width: 520px;
+  margin: 1em;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
