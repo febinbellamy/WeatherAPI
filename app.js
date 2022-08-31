@@ -1,6 +1,13 @@
+import WEATHER_API_KEY from "./apikey.js";
+
+// function to round the temperature to the nearest integer
+function roundToNearestNum(num) {
+  return Math.floor(num + 0.5);
+}
+
 let weather = {
   // an object to store the functions & variables needed to use the API
-
+  apiKey: WEATHER_API_KEY,
   fetchWeather(city) {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=Imperial&appid=${this.apiKey}`
@@ -14,18 +21,20 @@ let weather = {
     const { icon, description } = data.weather[0];
     const { temp, feels_like, humidity } = data.main;
     const { speed } = data.wind;
+
     document.querySelector(".city").innerHTML = `Weather in ${name}`;
     document.querySelector(
       ".icon"
     ).src = `https://openweathermap.org/img/wn/${icon}.png`;
     document.querySelector(".description").innerHTML = `${description}`;
-    document.querySelector(".temp").innerHTML = `${temp} °F)`;
-    document.querySelector(".feelslike").innerHTML = `${feels_like} °F`;
+    document.querySelector(
+      ".temp"
+    ).innerHTML = `Current Temperature: ${roundToNearestNum(temp)} °F`;
+    document.querySelector(
+      ".feelslike"
+    ).innerHTML = `Feels like ${feels_like} °F`;
     document.querySelector(".humidity").innerHTML = `Humidity: ${humidity}%`;
     document.querySelector(".wind").innerHTML = `Wind: ${speed} mph`;
-    document.querySelector(
-      "body"
-    ).style.backgroundImage = `url(https://images.unsplash.com/photo-1503788760144-795d5cdf0f56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)`;
   },
   search() {
     this.fetchWeather(document.querySelector(".search-bar").value);

@@ -6,36 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer src="app.js"></script>
+    <script defer src="app.js" type="module"></script>
   </head>
   <body>
     <div class="card">
       <div class="search">
-        <input type="text" class="search-bar" />
-        <button>Search</button>
+        <input
+          type="text"
+          class="search-bar"
+          placeholder="Type in a city name..."
+        />
+        <button id="searchBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+            <path
+              d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM288 176c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 48.8 46.5 111.6 68.6 138.6c6 7.3 16.8 7.3 22.7 0c22.1-27 68.6-89.8 68.6-138.6zm-48 0c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"
+            />
+          </svg>
+        </button>
       </div>
 
       <div class="weather">
-        <h2 class="city">Weather in St. Louis</h2>
-        <div class="temp">84 °F</div>
-        <img src="" alt="" class="icon" />
-        <div class="description">Sunny</div>
+        <h1 class="city" id="cityID">Weather in St. Louis</h1>
+        <div class="temp" id="tempID">Current Temperature: 84 °F</div>
+        <img
+          src="https://openweathermap.org/img/wn/03d.png"
+          alt=""
+          class="icon"
+        />
+        <div class="description">Scattered Clouds</div>
         <div class="feelslike">Feels like 90 °F</div>
         <div class="humidity">Humidity: 34%</div>
         <div class="wind">Wind: 6.2 mph</div>
       </div>
     </div>
+
+    <!-- My attempt at using Lua to round the temp to the nearest integer-->
     <!-- <script type="application/lua">
+
+      local button = window.document:getElementById('searchBtn')
+
       function roundToNearestInteger(num)
         return math.floor(num + 0.5)
       end
-      roundToNearestInteger(temp)
-    </script> -->
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+      button:addEventListener('click', function ()
+      window.document:getElementById('tempID').innerHTML=roundToNearestInteger(15.4)
+      end)
+    </script>
+
+    <script
+      src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"
+    ></script>
     <script
       src="http://paulcuth.me.uk/starlight/browser-lib/starlight.js"
       data-run-script-tags
-    ></script>
+    ></script> -->
   </body>
 </html>
