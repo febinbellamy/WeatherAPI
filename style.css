@@ -36,11 +36,12 @@ button {
   outline: none;
   height: 2.5em;
   width: 2.5em;
-  transition: 0.2s;
+  transition: 0.1s;
 }
 
 button:hover {
   background-color: #e8cdd9;
+  border: rgba(6, 4, 45, 0.85) solid 1px;
   cursor: pointer;
 }
 
